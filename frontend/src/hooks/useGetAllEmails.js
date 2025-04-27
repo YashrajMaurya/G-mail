@@ -11,7 +11,7 @@ const useGetAllEmails = () => {
         if (!user || !user.email) return console.error("User not found!");
 
         try {
-            const res = await axios.get(`http://localhost:8000/api/v1/email/getallemails/${user.email}`, {
+            const res = await axios.get(`https://g-mail-backend.onrender.com/api/v1/email/getallemails/${user.email}`, {
                 withCredentials: true
             });
             dispatch(setEmails(res.data.emails));
