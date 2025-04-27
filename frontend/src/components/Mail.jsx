@@ -24,7 +24,7 @@ const Mail = () => {
     const params = useParams()
     const deleteHandler = async () => {
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/email/${params.id}`, { withCredentials: true })
+            const res = await axios.delete(`https://g-mail-backend.onrender.com/api/v1/email/${params.id}`, { withCredentials: true })
             toast.success(res.data.msg)
             navigate('/')
         } catch (error) {
