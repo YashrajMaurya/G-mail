@@ -18,7 +18,7 @@ const Navbar = () => {
     const navigate = useNavigate()
     const logout = async () => {
         try {
-            const res = await axios.get("http://localhost:8000/api/v1/user/logout")
+            const res = await axios.get("https://g-mail-backend.onrender.com/api/v1/user/logout")
             toast.success(res.data.msg)
             dispatch(setAuthUser(null))
             navigate("/login")
