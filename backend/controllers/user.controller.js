@@ -40,7 +40,7 @@ export const login = async(req,res)=>{
             userId:user._id
         }
         const token = await jwt.sign(tokenData, process.env.SECRET_KEY, {expiresIn:'1d'})
-        return res.status(200).cookie("token",token,{maxAge:1*24*60*60*1000, httpOnly:true, sameSite:'None'}).json({
+        return res.status(200).cookie("token",token,{maxAge:1*24*60*60*1000, httpOnly:true,secure: true, sameSite:'None'}).json({
             mess:`${user.fullname} Login Success`,
             success: true,
             user
